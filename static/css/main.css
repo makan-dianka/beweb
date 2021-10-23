@@ -1,0 +1,16 @@
+/* page success */
+#gros{
+    color: green;
+}
+
+#gros p{
+    color: blue;
+}
+
+#global-scrutin{
+    color:hotpink;
+}
+
+#global-scrutin h2,h3{
+    color:blue;
+}
