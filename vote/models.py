@@ -7,6 +7,4 @@ class Member(models.Model):
         return self.Votre_nom
 
 # class Sondage(models.Model):
-#     votant = models.OneToOneField(Member, on_delete=models.CASCADE)
-
-    
+#     votant = models.OneToOneField(Member, on_delete=models.CASCADE)  
