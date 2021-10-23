@@ -1,4 +1,4 @@
-/* page success */
+/* page success.html */
 #gros{
     color: green;
 }
@@ -11,6 +11,7 @@
     color:hotpink;
 }
 
+/* page scrutin.html */
 #global-scrutin h2,h3{
     color:blue;
 }
