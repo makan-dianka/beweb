@@ -11,8 +11,9 @@ def vote(request):
     names = []
     if request.method=="POST":
         form = MemberForm(request.POST)
-        username = request.POST.get("Votre_nom")
+        
         if form.is_valid():
+            username = form.cleaned_data.get("Votre_nom") #request.POST.get("Votre_nom")
             for name in nom_dispo:
                 names.append(name.Votre_nom)
             if username in names:
