@@ -33,4 +33,9 @@ def success(request, name):
 def scrutin(request):
     obj = Member.objects.all()
     total = len(obj)
-    return render(request, 'vote/scrutin.html', {'total':total})
+    return render(request, 'vote/scrutin.html', {'total':total}) 
+
+def voteurs(request):
+    obj = Member.objects.all()
+    total = len(obj)
+    return render(request, 'vote/voteurs.html', {'total':total, 'members':obj})
