@@ -20,16 +20,20 @@
                 <div class="md-col-4">
                   <br />
                   <h3>Bonjour {{user}}</h3>
-                  <p class="btn btn-primary btn-sm"> <a href="{% url 'vote:ajout' %}" style='color:white;'> Ajout / suppr un candidat</a></p>
+                  <p style="color:green;">{{message}}</p>
+                  <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                  </form>
                   
                   <br />
-                    <h5>Veuillez selectionner un candidat pour voter</h5>
-                    <p style="color:green;">{{message}}</p>
-                    <form method="post">
-                      {% csrf_token %}
-                      {{ form|crispy }}
-                      <button type="submit" class="btn btn-primary">Je vote</button>
-                    </form>
+                    <h5>Candidats</h5>
+                    {% for member in obj %}
+                      {{member.nom_de_candidat}} <br />
+                    {% endfor %}
+                    <br /> <br />
+                    <a href="{% url 'vote:vote' %}">Page de vote</a>
                 </div>
                 <div class="col-md-4">
                   

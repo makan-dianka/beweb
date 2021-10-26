@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<title>Connexion</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	
+	
+		<style type="text/css">
+			body{
+				background: grey;
+			}
+		</style>
+
+	</head>
+	<body>
+        <br /><br />
+			<div class="row">
+				<div class="col-sm">
+				</div>
+				
+				<div class="col-sm" style="background: yellow; box-shadow: 4px 5px 8px;">
+					<h1 style="color:green;">Connexion</h1>
+					{% for message in messages %}
+					   <p style="color: red;">{{message}}</p>
+					{% endfor %}
+		
+					<form method="POST" action="">
+						{% csrf_token %}
+							<input type="text" name="username" placeholder="Votre nom d'utilisateur" class="form-control"> <br />
+							<input type="password" name="password" placeholder="Votre mot de passe" class="form-control"> <br />
+							<input class="btn btn-primary" type="submit" value="Se connecter">
+					</form>
+					<br />
+					<p>Vous n'avez pas un compte ? <a href="#">Inscrivez-vous ici</a></p> <br />
+				</div>
+				
+				<div class="col-sm">
+				</div>
+			</div>
+	</body>
+</html>
