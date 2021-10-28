@@ -16,11 +16,15 @@
                 </div>
                 <div class="md-col-4" id="gros">
                   <br /></br />
-                    <h1>Merci {{obj}} !</h1>
+                    <h1>Merci {{obj.votre_nom}} !</h1>
                     <h5>Votre vote a été prise en compte </h5>
                     <br />
                     <p>Vous pouvez voir le scrutin ci-dessous</p>
+                    {% for candidat in candidats %}
+                      {{candidat.nom_de_candidat}}
+                      {{candidat.candidats.id}}
                     <br /></br />
+            
                    
                 </div>
                 <div class="col-md-4">

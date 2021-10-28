@@ -62,8 +62,10 @@ def vote(request):
     return render(request, 'vote/vote.html', context)
 
 def success(request):
-    #obj = Sondage.objects.get(votant=name)
-    return render(request, 'vote/success.html')
+    obj = Sondage.objects.all()
+    candidat = Member.objects.all()
+    context = {'obj': obj, 'candidats': candidat}
+    return render(request, 'vote/success.html', context)
 
 # def scrutin(request):
 #     obj = Member.objects.all()
